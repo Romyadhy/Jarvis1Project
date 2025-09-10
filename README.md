@@ -11,10 +11,10 @@
 |--------|--------|
 | Voice Input (Microphone) | ✅ Done |
 | Text-to-Speech (TTS) | ✅ Done |
-| Understands "Hello", "Time", "Date" | ✅ Done |
-| Can Open Apps (Coming Soon) | 🛠️ In Progress |
-| Search Google | ❌ Not Yet |
-| Play Music | ❌ Not Yet |
+| Understands "Hello", "Time", "Date" | ✅ Done | 
+| Ouput Text | ✅ Done |
+| Output Audio | ❌ Not Yet |
+
 
 ---
 
@@ -69,6 +69,7 @@
 ## 🎉 Thanks for Building With Me!
 
 > 💬 Project for the sake of having nothing to do
+> stay code, no enemies
 
 
 ---
