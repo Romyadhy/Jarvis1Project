@@ -3,7 +3,8 @@ import speech_recognition as sr
 import datetime
 import time
 
-# initial
+# Initialize once
+engine = pyttsx3.init(driverName='sapi5')  # on Windows
 engine = pyttsx3.init()
 recognizer = sr.Recognizer()
 
@@ -31,11 +32,13 @@ def take_command():
     except sr.UnknownValueError:
         speak("Sorry, I couldn't understand. Please try again.")
         return ""
-    
+    except sr.RequestError:
+        speak("Speech service is not available right now.")
+        return ""
+
 # Main loop
 if __name__ == "__main__":
     time.sleep(1)
-    
     speak("Hello, I am Jarvis. How can I assist you sir?")
 
     while True:
@@ -44,7 +47,7 @@ if __name__ == "__main__":
         if 'hello' in command:
             speak("Hai sir! How are you?")
         elif 'how are you' in command:
-            speak("Im good sir! What can I do for you?")
+            speak("I'm good sir! What can I do for you?")
         elif 'time' in command:
             current_time = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"The current time is {current_time}")
@@ -54,6 +57,7 @@ if __name__ == "__main__":
         elif 'exit' in command or 'quit' in command or 'stop' in command:
             speak("Goodbye sir! Have a great day.")
             break
-
+        elif command == "":
+            continue
         else:
             speak("I didn't catch that sir. Please say it again.")
